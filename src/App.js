@@ -36,10 +36,10 @@ const createInitialBoard = () => {
   // Colocar el rey en el centro
   board[center][center] = KING;
 
-  // Colocar defensores alrededor del rey
+ocar defensores alrededor del rey
   const defenderPositions = [
     [center-1, center], [center+1, center], [center, center-1], [center, center+1],
-    [center-2, center], [center+2, center], [center, center-2], [center, center+2],
+    [center-2center-2, center], [center+2, center], [center, center-2], [center, center+2],
     [center-1, center-1], [center-1, center+1], [center+1, center-1], [center+1, center+1]
   ];
 
@@ -312,9 +312,9 @@ const Hnefatafl = () => {
 
   const getPieceIcon = (piece) => {
     switch (piece) {
-      case KING: return <Crown className="king-icon" />;
-      case DEFENDER: return <Shield className="defender-icon" />;
-      case ATTACKER: return <Swords className="attacker-icon" />;
+      case KING: return <Crown className="king-icon" style={{color: '#ffd700', fontSize: '28px'}} />;
+      case DEFENDER: return <Shield className="defender-icon" style={{color: '#0047ab', fontSize: '24px'}} />;
+      case ATTACKER: return <Swords className="attacker-icon" style={{color: '#cc0000', fontSize: '24px'}} />;
       default: return null;
     }
   };
@@ -405,15 +405,15 @@ const Hnefatafl = () => {
 
           <div className="piece-legend">
             <div className="legend-item">
-              <Crown className="legend-icon" style={{color: '#fbbf24'}} />
+              <Crown className="legend-icon" style={{color: '#ffd700'}} />
               <span>Rey (Defensores)</span>
             </div>
             <div className="legend-item">
-              <Shield className="legend-icon" style={{color: '#60a5fa'}} />
+              <Shield className="legend-icon" style={{color: '#0047ab'}} />
               <span>Defensor</span>
             </div>
             <div className="legend-item">
-              <Swords className="legend-icon" style={{color: '#f87171'}} />
+              <Swords className="legend-icon" style={{color: '#cc0000'}} />
               <span>Atacante</span>
             </div>
           </div>
