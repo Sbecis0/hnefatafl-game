@@ -1,13 +1,231 @@
-body {
+/* Reset básico */
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  background: linear-gradient(135deg, #1e293b 0%, #374151 50%, #92400e 100%);
+  min-height: 100vh;
+  color: white;
+}
+
+/* Contenedor principal */
+.game-container {
+  min-height: 100vh;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Título */
+.game-title {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.game-title h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #fef3c7;
+  margin-bottom: 0.5rem;
+}
+
+.game-title p {
+  font-size: 1.125rem;
+  color: #fcd34d;
+}
+
+/* Layout principal */
+.game-layout {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  width: 100%;
+}
+
+/* Contenedor del tablero */
+.board-container {
+  background: #92400e;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+/* Tablero */
+.board {
+  display: grid;
+  grid-template-columns: repeat(11, 1fr);
+  gap: 0;
+  border: 4px solid #451a03;
+  border-radius: 0.25rem;
+}
+
+/* Celdas del tablero */
+.cell {
+  width: 48px;
+  height: 48px;
+  border: 1px solid #92400e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.cell:hover {
+  background-color: #fcd34d !important;
+}
+
+/* Colores de celdas */
+.cell-normal-light {
+  background-color: #fef3c7;
+}
+
+.cell-normal-dark {
+  background-color: #fef7ed;
+}
+
+.cell-throne {
+  background-color: #fde68a;
+}
+
+.cell-corner {
+  background-color: #f59e0b;
+}
+
+/* Estados de celda */
+.cell-selected {
+  box-shadow: 0 0 0 4px #3b82f6;
+}
+
+.cell-valid-move {
+  background-color: #bbf7d0 !important;
+}
+
+.cell-valid-move:hover {
+  background-color: #86efac !important;
+}
+
+/* Panel de información */
+.info-panel {
+  background: #1e293b;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  min-width: 320px;
+  color: white;
+}
+
+.info-panel h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #fef3c7;
+}
+
+.current-player {
+  font-size: 1.125rem;
+  margin-bottom: 1.5rem;
+}
+
+.player-defender {
+  color: #60a5fa;
+  font-weight: bold;
+  margin-left: 0.5rem;
+}
+
+.player-attacker {
+  color: #f87171;
+  font-weight: bold;
+  margin-left: 0.5rem;
+}
+
+/* Mensaje de victoria */
+.victory-message {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: #065f46;
+  border-radius: 0.5rem;
+}
+
+.victory-message h3 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #d1fae5;
+  margin-bottom: 0.5rem;
+}
+
+.victory-message p {
+  color: #a7f3d0;
+}
+
+.victory-reason {
+  color: #6ee7b7;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+/* Reglas */
+.rules-section {
+  margin-bottom: 1.5rem;
+}
+
+.rules-section h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: #fef3c7;
+}
+
+.rules-list {
+  list-style: none;
+  color: #d1d5db;
+}
+
+.rules-list li {
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Leyenda de piezas */
+.piece-legend {
+  margin-bottom: 1.5rem;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+}
+
+.legend-icon {
+  width: 16px;
+  height: 16px;
+  margin-right: 0.5rem;
+}
+
+/* Botón */
+.reset-button {
+  width: 100%;
+  background: #d97706;
+  color: white;
+  font-weight: bold;
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  font-size: 1rem;
+}
+
+.reset-button:hover {
+  background: #b45309;
 }
