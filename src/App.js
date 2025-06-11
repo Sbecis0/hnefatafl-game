@@ -422,6 +422,12 @@ const Hnefatafl = () => {
             🔄 Nueva Partida
           </button>
         </div>
+        <footer className="footer" style={{textAlign: 'center', marginTop: '20px'}}>
+          <p>© 2025 Hnefatafl Game. Creado por Saber.</p>
+          <a href="https://github.com/Sbecis0/hnefatafl-game" target="_blank" rel="noopener noreferrer">
+            Repositorio de Github
+          </a>
+        </footer>
       </div>
     </div>
   );
