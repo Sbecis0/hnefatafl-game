@@ -36,10 +36,10 @@ const createInitialBoard = () => {
   // Colocar el rey en el centro
   board[center][center] = KING;
 
-ocar defensores alrededor del rey
+  // Colocar defensores alrededor del rey
   const defenderPositions = [
     [center-1, center], [center+1, center], [center, center-1], [center, center+1],
-    [center-2center-2, center], [center+2, center], [center, center-2], [center, center+2],
+    [center-2, center], [center+2, center], [center, center-2], [center, center+2],
     [center-1, center-1], [center-1, center+1], [center+1, center-1], [center+1, center+1]
   ];
 
@@ -313,8 +313,8 @@ const Hnefatafl = () => {
   const getPieceIcon = (piece) => {
     switch (piece) {
       case KING: return <Crown className="king-icon" style={{color: '#ffd700', fontSize: '28px'}} />;
-      case DEFENDER: return <Shield className="defender-icon" style={{color: '#0047ab', fontSize: '24px'}} />;
-      case ATTACKER: return <Swords className="attacker-icon" style={{color: '#cc0000', fontSize: '24px'}} />;
+      case DEFENDER: return <Shield className="defender-icon" style={{color: '#22c55e', fontSize: '24px'}} />;
+      case ATTACKER: return <Swords className="attacker-icon" style={{color: '#8b5cf6', fontSize: '24px'}} />;
       default: return null;
     }
   };

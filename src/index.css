@@ -136,13 +136,13 @@ body {
 }
 
 .player-defender {
-  color: #60a5fa;
+  color: #22c55e;
   font-weight: bold;
   margin-left: 0.5rem;
 }
 
 .player-attacker {
-  color: #f87171;
+  color: #8b5cf6;
   font-weight: bold;
   margin-left: 0.5rem;
 }
